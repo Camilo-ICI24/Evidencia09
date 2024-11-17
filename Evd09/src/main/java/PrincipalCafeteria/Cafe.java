@@ -22,6 +22,10 @@ public class Cafe {
 		this.codigoIdentificador = codigoIdentificador;
 	}
 
+	//Constructor vacio (Se necesita para el gestor de archivos)
+	public Cafe() {
+	}
+
 	// Getter y setter para 'cafeteria'
 
 

@@ -21,6 +21,10 @@ public class Cafeteria {
 		this.telefono = telefono;
 		this.menu = new ArrayList<>();
 	}
+	//Constructor vacio (Se necesita para el gestor de archivos)
+	public Cafeteria() {
+		this.menu = new ArrayList<>();
+	}
 
 	// Getters y setters para los nuevos atributos
 	public String getFacebook() {
@@ -64,6 +68,11 @@ public class Cafeteria {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+	public List<Cafe> getMenu() {
+		return menu;
+	}
+
 
 
 

@@ -10,7 +10,7 @@ public class Main {
         redesSociales.add("Facebook");
 
         // Crear una cafetería
-        Cafeteria cafeteria = new Cafeteria("Cafetería Central", "Av. Principal #123", redesSociales);
+        Cafeteria cafeteria = new Cafeteria("Cafetería Central", "Av. Principal #123", redesSociales.get(1), redesSociales.get(0), 12345678);
 
         // Agregar cafés al menú
         cafeteria.agregarCafes(10, 200, Tamaño.MEDIANO, IngredientesCafe.CHOCOLATE, "Café Mocha", 1);
