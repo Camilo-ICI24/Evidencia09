@@ -1,7 +1,7 @@
 package PrincipalCafeteria;
 
 public enum Tamaño {
-	PEQUEñO,
+	PEQUENO,
 	MEDIANO,
 	GRANDE
 }

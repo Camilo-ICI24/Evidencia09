@@ -21,7 +21,7 @@ public class Cafeteria {
 
 	public boolean agregarCafe(Cafe cafe) {
 		if (menu.add(cafe)) {
-			System.out.println("Café agregado exitosamente: " + cafe.getNombreCafe());
+			System.out.println("Café agregado exitosamente: " + cafe.toString());
 			return true;
 		}
 		return false;
@@ -31,7 +31,7 @@ public class Cafeteria {
 		Iterator<Cafe> iterator = menu.iterator();
 		while (iterator.hasNext()) {
 			Cafe cafe = iterator.next();
-			if (cafe.getCodigoIdentificador() == codigoCafe) {
+			if (cafe.getCodigoIdentificador()== codigoCafe) {
 				iterator.remove();
 				System.out.println("Café eliminado: " + cafe.getNombreCafe());
 				return;
