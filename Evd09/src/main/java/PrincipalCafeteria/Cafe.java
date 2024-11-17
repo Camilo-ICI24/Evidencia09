@@ -2,7 +2,7 @@ package PrincipalCafeteria;
 
 public class Cafe {
 
-	private Cafeteria cafeteria;
+
 	private int gramosCafe;
 	private int mililitrosAgua;
 	private Tamaño tamanoCafe;
@@ -11,9 +11,9 @@ public class Cafe {
 	private int codigoIdentificador; // Nuevo atributo
 
 	// Constructor para inicializar todos los atributos
-	public Cafe(Cafeteria cafeteria, int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe,
+	public Cafe( int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe,
 				IngredientesCafe ingrediente, String nombreCafe, int codigoIdentificador) {
-		this.cafeteria = cafeteria;
+
 		this.gramosCafe = gramosCafe;
 		this.mililitrosAgua = mililitrosAgua;
 		this.tamanoCafe = tamanoCafe;
@@ -23,13 +23,7 @@ public class Cafe {
 	}
 
 	// Getter y setter para 'cafeteria'
-	public Cafeteria getCafeteria() {
-		return this.cafeteria;
-	}
 
-	public void setCafeteria(Cafeteria cafeteria) {
-		this.cafeteria = cafeteria;
-	}
 
 	// Getter y setter para 'gramosCafe'
 	public int getGramosCafe() {
@@ -89,7 +83,6 @@ public class Cafe {
 	@Override
 	public String toString() {
 		return "Cafe{" +
-				"cafeteria=" + (cafeteria != null ? cafeteria.getClass().getSimpleName() : "null") + // Evita la recursión
 				", gramosCafe=" + gramosCafe +
 				", mililitrosAgua=" + mililitrosAgua +
 				", tamanoCafe=" + (tamanoCafe != null ? tamanoCafe.toString() : "null") +

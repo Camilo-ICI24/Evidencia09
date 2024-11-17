@@ -19,37 +19,27 @@ public class Cafeteria {
 
 	// Getters y setters (sin cambios)
 
-	public boolean agregarCafe(Cafe cafe) {
-		if (menu.add(cafe)) {
-			System.out.println("Café agregado exitosamente: " + cafe.toString());
-			return true;
-		}
-		return false;
+	public void agregarCafes(int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe, IngredientesCafe ingrediente, String nombreCafe, int codigoIdentificador){
+		Cafe newCafe = new Cafe(gramosCafe,mililitrosAgua,tamanoCafe, ingrediente, nombreCafe, codigoIdentificador);
+		menu.add(newCafe);
+		System.out.println("Cafe agregado exitosamente, "+nombreCafe+" suena delicioso");
 	}
 
-	public void descontinuarCafeporCodigoIdentificador(int codigoCafe) {
-		Iterator<Cafe> iterator = menu.iterator();
-		while (iterator.hasNext()) {
-			Cafe cafe = iterator.next();
-			if (cafe.getCodigoIdentificador()== codigoCafe) {
-				iterator.remove();
-				System.out.println("Café eliminado: " + cafe.getNombreCafe());
-				return;
-			}
+
+
+	public void descontinuarCafeporCodigoIdentificador(int codigoCafe){
+		for (Cafe cafe : menu){
+			if(cafe.getCodigoIdentificador() == codigoCafe)
+				menu.remove(cafe);
+			break;
 		}
-		System.out.println("Café no encontrado con el código: " + codigoCafe);
 	}
 
-	public void listaCafesPorTamaño(Tamaño tamano) {
-		boolean encontrado = false;
-		for (Cafe cafe : menu) {
-			if (cafe.getTamanoCafe() == tamano) {
-				System.out.println(cafe);
-				encontrado = true;
+	public void  listaCafesPorTamaño(Tamaño tamano){
+		for(Cafe cafe : menu){
+			if(cafe.getTamanoCafe()== tamano){
+				System.out.println(cafe.toString());
 			}
-		}
-		if (!encontrado) {
-			System.out.println("No hay cafés de tamaño: " + tamano);
 		}
 	}
 
