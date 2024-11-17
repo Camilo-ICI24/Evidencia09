@@ -1,115 +1,65 @@
 package PrincipalCafeteria;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Cafeteria {
-
-	private Collection<Cafe> cafes;
 	private String nombre;
 	private String direccion;
 	private List<String> redesSociales;
 	private List<Cafe> menu;
 
-	// Constructor para inicializar los atributos
-	public Cafeteria(Collection<Cafe> cafes, String nombre, String direccion, List<String> redesSociales, List<Cafe> menu) {
-		this.cafes = cafes;
+	public Cafeteria(String nombre, String direccion, List<String> redesSociales) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.redesSociales = redesSociales;
-		this.menu = menu;
+		this.menu = new ArrayList<>();
 	}
 
-	public String getNombre() {
-		return this.nombre;
-	}
+	// Getters y setters (sin cambios)
 
-	/**
-	 *
-	 * @param nombre
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getDireccion() {
-		return this.direccion;
-	}
-
-	/**
-	 *
-	 * @param direccion
-	 */
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public List<String> getRedesSociales() {
-		return this.redesSociales;
-	}
-
-	/**
-	 *
-	 * @param redesSociales
-	 */
-	public void setRedesSociales(List<String> redesSociales) {
-		this.redesSociales = redesSociales;
-	}
-
-	public List<Cafe> getMenu() {
-		return this.menu;
-	}
-
-	/**
-	 *
-	 * @param menu
-	 */
-	public void setMenu(List<Cafe> menu) {
-		this.menu = menu;
-	}
-
-	/**
-	 *
-	 * @param cafe
-	 */
 	public boolean agregarCafe(Cafe cafe) {
-		// TODO - implement Cafeteria.agregarCafe
-		throw new UnsupportedOperationException();
+		if (menu.add(cafe)) {
+			System.out.println("Café agregado exitosamente: " + cafe.getNombreCafe());
+			return true;
+		}
+		return false;
 	}
 
-	/**
-	 *
-	 * @param medida
-	 */
-	public Cafe obtenerCafePorTamano(String medida) {
-		// TODO - implement Cafeteria.obtenerCafePorTamano
-		throw new UnsupportedOperationException();
+	public void descontinuarCafeporCodigoIdentificador(int codigoCafe) {
+		Iterator<Cafe> iterator = menu.iterator();
+		while (iterator.hasNext()) {
+			Cafe cafe = iterator.next();
+			if (cafe.getCodigoIdentificador() == codigoCafe) {
+				iterator.remove();
+				System.out.println("Café eliminado: " + cafe.getNombreCafe());
+				return;
+			}
+		}
+		System.out.println("Café no encontrado con el código: " + codigoCafe);
 	}
 
-	/**
-	 *
-	 * @param cafe
-	 */
-	public boolean descontinuarCafe(Cafe cafe) {
-		// TODO - implement Cafeteria.descontinuarCafe
-		throw new UnsupportedOperationException();
+	public void listaCafesPorTamaño(Tamaño tamano) {
+		boolean encontrado = false;
+		for (Cafe cafe : menu) {
+			if (cafe.getTamanoCafe() == tamano) {
+				System.out.println(cafe);
+				encontrado = true;
+			}
+		}
+		if (!encontrado) {
+			System.out.println("No hay cafés de tamaño: " + tamano);
+		}
 	}
 
-	public boolean modificarInformacion() {
-		// TODO - implement Cafeteria.modificarInformacion
-		throw new UnsupportedOperationException();
-	}
-
-	// Método toString para representar el estado del objeto
 	@Override
 	public String toString() {
 		return "Cafeteria{" +
 				"nombre='" + nombre + '\'' +
 				", direccion='" + direccion + '\'' +
-				", redesSociales=" + (redesSociales != null ? redesSociales : "[]") +
-				", menu=" + (menu != null ? menu : "[]") +
-				", cafes=" + (cafes != null ? cafes : "[]") +
+				", redesSociales=" + redesSociales +
+				", menu=" + menu +
 				'}';
 	}
-
-	public void descontinuarCafe()
 }
