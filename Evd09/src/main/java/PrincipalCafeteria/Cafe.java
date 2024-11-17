@@ -8,12 +8,30 @@ public class Cafe {
 	private Tamaño tamanoCafe;
 	private IngredientesCafe ingrediente;
 
+	// Constructor para inicializar los atributos
+	public Cafe(Cafeteria cafeteria, int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe, IngredientesCafe ingrediente) {
+		this.cafeteria = cafeteria;
+		this.gramosCafe = gramosCafe;
+		this.mililitrosAgua = mililitrosAgua;
+		this.tamanoCafe = tamanoCafe;
+		this.ingrediente = ingrediente;
+	}
+
+	// Getter y setter para 'cafeteria'
+	public Cafeteria getCafeteria() {
+		return this.cafeteria;
+	}
+
+	public void setCafeteria(Cafeteria cafeteria) {
+		this.cafeteria = cafeteria;
+	}
+
 	public int getGramosCafe() {
 		return this.gramosCafe;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param gramosCafe
 	 */
 	public void setGramosCafe(int gramosCafe) {
@@ -25,7 +43,7 @@ public class Cafe {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param mililitrosAgua
 	 */
 	public void setMililitrosAgua(int mililitrosAgua) {
@@ -45,7 +63,7 @@ public class Cafe {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param ingrediente
 	 */
 	public void setIngrediente(IngredientesCafe ingrediente) {
@@ -57,4 +75,15 @@ public class Cafe {
 		throw new UnsupportedOperationException();
 	}
 
+	// Método toString para mostrar el estado del objeto
+	@Override
+	public String toString() {
+		return "Cafe{" +
+				"cafeteria=" + (cafeteria != null ? cafeteria.toString() : "null") +
+				", gramosCafe=" + gramosCafe +
+				", mililitrosAgua=" + mililitrosAgua +
+				", tamanoCafe=" + (tamanoCafe != null ? tamanoCafe.toString() : "null") +
+				", ingrediente=" + (ingrediente != null ? ingrediente.toString() : "null") +
+				'}';
+	}
 }

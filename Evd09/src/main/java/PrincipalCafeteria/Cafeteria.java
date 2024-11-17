@@ -10,12 +10,21 @@ public class Cafeteria {
 	private List<String> redesSociales;
 	private List<Cafe> menu;
 
+	// Constructor para inicializar los atributos
+	public Cafeteria(Collection<Cafe> cafes, String nombre, String direccion, List<String> redesSociales, List<Cafe> menu) {
+		this.cafes = cafes;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.redesSociales = redesSociales;
+		this.menu = menu;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
@@ -27,7 +36,7 @@ public class Cafeteria {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param direccion
 	 */
 	public void setDireccion(String direccion) {
@@ -39,7 +48,7 @@ public class Cafeteria {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param redesSociales
 	 */
 	public void setRedesSociales(List<String> redesSociales) {
@@ -51,7 +60,7 @@ public class Cafeteria {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param menu
 	 */
 	public void setMenu(List<Cafe> menu) {
@@ -59,7 +68,7 @@ public class Cafeteria {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cafe
 	 */
 	public boolean agregarCafe(Cafe cafe) {
@@ -68,16 +77,16 @@ public class Cafeteria {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param medida
 	 */
 	public Cafe obtenerCafePorTamano(String medida) {
-		// TODO - implement Cafeteria.obtenerCafePorTama�o
+		// TODO - implement Cafeteria.obtenerCafePorTamano
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cafe
 	 */
 	public boolean descontinuarCafe(Cafe cafe) {
@@ -90,4 +99,15 @@ public class Cafeteria {
 		throw new UnsupportedOperationException();
 	}
 
+	// Método toString para representar el estado del objeto
+	@Override
+	public String toString() {
+		return "Cafeteria{" +
+				"nombre='" + nombre + '\'' +
+				", direccion='" + direccion + '\'' +
+				", redesSociales=" + (redesSociales != null ? redesSociales : "[]") +
+				", menu=" + (menu != null ? menu : "[]") +
+				", cafes=" + (cafes != null ? cafes : "[]") +
+				'}';
+	}
 }
