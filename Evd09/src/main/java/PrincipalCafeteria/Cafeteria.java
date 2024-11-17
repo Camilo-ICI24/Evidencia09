@@ -110,4 +110,6 @@ public class Cafeteria {
 				", cafes=" + (cafes != null ? cafes : "[]") +
 				'}';
 	}
+
+	public void descontinuarCafe()
 }

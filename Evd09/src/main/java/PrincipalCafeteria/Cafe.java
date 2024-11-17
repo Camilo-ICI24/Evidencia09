@@ -7,14 +7,19 @@ public class Cafe {
 	private int mililitrosAgua;
 	private Tamaño tamanoCafe;
 	private IngredientesCafe ingrediente;
+	private String nombreCafe; // Nuevo atributo
+	private int codigoIdentificador; // Nuevo atributo
 
-	// Constructor para inicializar los atributos
-	public Cafe(Cafeteria cafeteria, int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe, IngredientesCafe ingrediente) {
+	// Constructor para inicializar todos los atributos
+	public Cafe(Cafeteria cafeteria, int gramosCafe, int mililitrosAgua, Tamaño tamanoCafe,
+				IngredientesCafe ingrediente, String nombreCafe, int codigoIdentificador) {
 		this.cafeteria = cafeteria;
 		this.gramosCafe = gramosCafe;
 		this.mililitrosAgua = mililitrosAgua;
 		this.tamanoCafe = tamanoCafe;
 		this.ingrediente = ingrediente;
+		this.nombreCafe = nombreCafe;
+		this.codigoIdentificador = codigoIdentificador;
 	}
 
 	// Getter y setter para 'cafeteria'
@@ -26,30 +31,25 @@ public class Cafe {
 		this.cafeteria = cafeteria;
 	}
 
+	// Getter y setter para 'gramosCafe'
 	public int getGramosCafe() {
 		return this.gramosCafe;
 	}
 
-	/**
-	 *
-	 * @param gramosCafe
-	 */
 	public void setGramosCafe(int gramosCafe) {
 		this.gramosCafe = gramosCafe;
 	}
 
+	// Getter y setter para 'mililitrosAgua'
 	public int getMililitrosAgua() {
 		return this.mililitrosAgua;
 	}
 
-	/**
-	 *
-	 * @param mililitrosAgua
-	 */
 	public void setMililitrosAgua(int mililitrosAgua) {
 		this.mililitrosAgua = mililitrosAgua;
 	}
 
+	// Getter y setter para 'tamanoCafe'
 	public Tamaño getTamanoCafe() {
 		return this.tamanoCafe;
 	}
@@ -58,21 +58,31 @@ public class Cafe {
 		this.tamanoCafe = tamanoCafe;
 	}
 
+	// Getter y setter para 'ingrediente'
 	public IngredientesCafe getIngrediente() {
 		return this.ingrediente;
 	}
 
-	/**
-	 *
-	 * @param ingrediente
-	 */
 	public void setIngrediente(IngredientesCafe ingrediente) {
 		this.ingrediente = ingrediente;
 	}
 
-	public boolean modificarCafe() {
-		// TODO - implement Cafe.modificarCafe
-		throw new UnsupportedOperationException();
+	// Getter y setter para 'nombreCafe'
+	public String getNombreCafe() {
+		return this.nombreCafe;
+	}
+
+	public void setNombreCafe(String nombreCafe) {
+		this.nombreCafe = nombreCafe;
+	}
+
+	// Getter y setter para 'codigoIdentificador'
+	public int getCodigoIdentificador() {
+		return this.codigoIdentificador;
+	}
+
+	public void setCodigoIdentificador(int codigoIdentificador) {
+		this.codigoIdentificador = codigoIdentificador;
 	}
 
 	// Método toString para mostrar el estado del objeto
@@ -84,6 +94,8 @@ public class Cafe {
 				", mililitrosAgua=" + mililitrosAgua +
 				", tamanoCafe=" + (tamanoCafe != null ? tamanoCafe.toString() : "null") +
 				", ingrediente=" + (ingrediente != null ? ingrediente.toString() : "null") +
+				", nombreCafe='" + nombreCafe + '\'' +
+				", codigoIdentificador=" + codigoIdentificador +
 				'}';
 	}
 }
